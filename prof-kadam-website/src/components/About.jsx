@@ -28,7 +28,7 @@ const About = ({ id, setActiveSection }) => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-secondary-900 mb-4">
-            About Dr. Kadam
+            About Prof. Kadam
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
         </div>
@@ -68,7 +68,13 @@ const About = ({ id, setActiveSection }) => {
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
                   <span className="text-secondary-700">
-                    <strong>Marital Status:</strong> Married
+                    <strong>Marital Status:</strong> Married to Dr. Kaveri Kadam
+                  </span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
+                  <span className="text-secondary-700">
+                    <strong>Children:</strong> Aditya Kadam, Aditi Kadam
                   </span>
                 </div>
               </div>
@@ -84,7 +90,8 @@ const About = ({ id, setActiveSection }) => {
                     <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                     <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                   </svg>
-                  <span className="text-secondary-700">umeshkadam1@gmail.com</span>
+                  <span className="text-secondary-700">umeshkadam1@gmail.com ,</span>
+                  <span className="text-secondary-700">uakadam@mail.jnu.ac.in</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
@@ -119,9 +126,9 @@ const About = ({ id, setActiveSection }) => {
                 <div>
                   <h4 className="font-semibold text-secondary-900 mb-2">Office:</h4>
                   <p className="text-secondary-700 text-sm">
-                    Professor (Dr) Umesh Ashok Kadam,<br />
+                    Professor Umesh Ashok Kadam,<br />
                     Professor in Medieval Indian History,<br />
-                    Centre for Historical Studies,<br />
+                    Chamber no. 424 Fourth Floor, Centre for Historical Studies,<br />
                     School of Social Sciences,<br />
                     Jawaharlal Nehru University, New Delhi 110067.
                   </p>

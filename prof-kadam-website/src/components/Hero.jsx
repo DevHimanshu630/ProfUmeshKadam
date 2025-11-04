@@ -1,8 +1,30 @@
-import { useEffect, useState } from 'react'
-import profileImage from '../assets/Umesh-Kadam-3.webp'
-
+import { useEffect, useMemo, useState } from 'react'
+import profileImage from '../assets/umeshProfile.png'
+import buddha from '../assets/buddha.jpg'
 const Hero = ({ id, setActiveSection }) => {
   const [showScrollButton, setShowScrollButton] = useState(true)
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  // Load all images from ProfileImg folder (memoized)
+  const images = useMemo(() => {
+    const profileImages = import.meta.glob('../assets/ProfileImg/*.{jpeg,jpg,png,webp}', { eager: true })
+    const imageArray = Object.values(profileImages)
+      .map((mod) => (mod && mod.default ? mod.default : null))
+      .filter(Boolean)
+    return imageArray.length > 0 ? imageArray : [profileImage]
+  }, [])
+
+  // Auto-rotate images every 4 seconds
+  useEffect(() => {
+    const imageCount = images.length
+    if (imageCount <= 1) return
+    
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % imageCount)
+    }, 4000)
+
+    return () => clearInterval(interval)
+  }, [images])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -44,7 +66,7 @@ const Hero = ({ id, setActiveSection }) => {
   }
 
   return (
-    <section id={id} className="relative min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden pt-20">
+    <section id={id} className="relative min-h-[100svh] bg-gradient-to-br from-primary-50 via-white to-secondary-50 overflow-hidden lg:mt-8 lg:pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl"></div>
@@ -53,32 +75,48 @@ const Hero = ({ id, setActiveSection }) => {
       </div>
 
       <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
-        <div className="min-h-screen flex items-center pb-24">
+        <div className="min-h-screen flex items-center lg:pb-18">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Content */}
             <div className="space-y-6 lg:space-y-8">
               {/* Main Heading */}
               <div className="space-y-3 lg:space-y-4">
-                <h1 className="text-3xl lg:text-5xl font-bold text-secondary-900 leading-tight">
-                  Prof. (Dr.){' '}
+                {/* <h1 className="text-3xl lg:text-3xl font-bold text-secondary-900 leading-tight">
+           
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600">
-                    Umesh Ashok Kadam
+                  Prof. Umesh Ashok Kadam , Ph.D{' '}
                   </span>
-                </h1>
-                
+                </h1> */}
+                {/* Buddha Quote - Running Text */}
+                <div className="overflow-hidden bg-white/90 backdrop-blur-sm border border-primary-200 rounded-xl shadow-sm py-3">
+                  <div className="flex items-center gap-3 p-2">
+                    <div className="w-10 h-10 rounded-full overflow-hidden bg-primary-50 border border-primary-200 flex items-center justify-center flex-shrink-0">
+                      <img src={buddha} alt="Buddha" className="w-full h-full object-cover" />
+                    </div>
+                    <div className="flex-1 overflow-hidden whitespace-nowrap">
+                      <div className="inline-block animate-marquee text-secondary-800 text-sm lg:text-base">
+                        <span className="italic">"All that we are is the result of what we have thought."</span>
+                        <span className="ml-2">— Buddha on Life & Reality</span>
+                        <span className="ml-8">|</span>
+                        <span className="ml-8 italic">"All that we are is the result of what we have thought."</span>
+                        <span className="ml-2">— Buddha on Life & Reality</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <br />
                 <div className="space-y-2">
                   <h2 className="text-xl lg:text-2xl font-semibold text-primary-600">
-                    Professor of Medieval Indian History
+                    Professor of Medieval Indian and Early Modern Indian History, Centre for Historical Studies, Jawaharlal Nehru University, New Delhi
                   </h2>
                   <p className="text-base lg:text-lg text-secondary-700 font-medium">
-                    Centre for Historical Studies, School of Social Sciences
-                  </p>
-                  <p className="text-base lg:text-lg text-secondary-700 font-medium">
-                    Jawaharlal Nehru University, New Delhi
+                    Historian, Author, Editor, Exhibition Curator / Designer & Agriculturalist
                   </p>
                 </div>
               </div>
 
+                
+                      
               {/* Research Focus */}
               <div className="space-y-3 lg:space-y-4">
                 <h3 className="text-lg font-semibold text-secondary-800">Research Focus</h3>
@@ -138,15 +176,20 @@ const Hero = ({ id, setActiveSection }) => {
 
             {/* Right Content - Profile Image and Professional Summary */}
             <div className="space-y-6 lg:space-y-8">
-              {/* Profile Image */}
+              {/* Profile Image Carousel */}
               <div className="flex justify-center lg:justify-end">
                 <div className="relative">
-                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200">
-                    <img 
-                      src={profileImage} 
-                      alt="Prof. (Dr.) Umesh Ashok Kadam" 
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200 relative">
+                    {images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt={`Prof. (Dr.) Umesh Ashok Kadam - ${idx + 1}`}
+                        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                          idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                        }`}
+                      />
+                    ))}
                   </div>
                   {/* Decorative elements */}
                   <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent-500 rounded-full"></div>

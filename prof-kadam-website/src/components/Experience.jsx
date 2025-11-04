@@ -1,5 +1,7 @@
 import { useEffect } from 'react'
-
+import jnulogo from '../assets/jnulogo.jpeg'
+import shivajilogo from '../assets/shivajilogo.jpeg'
+import puneunilogo from '../assets/punelogo.jpeg'
 const Experience = ({ id, setActiveSection }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -35,7 +37,8 @@ const Experience = ({ id, setActiveSection }) => {
         "Supervising doctoral and post-graduate students",
         "Contributing to academic administration",
         "Teaching advanced courses in medieval Indian history"
-      ]
+      ],
+      logo: jnulogo
     },
     {
       position: "Professor",
@@ -47,7 +50,8 @@ const Experience = ({ id, setActiveSection }) => {
         "Teaching and research in History",
         "Academic leadership role",
         "Supervision of research scholars"
-      ]
+      ],
+       logo: shivajilogo
     },
     {
       position: "Assistant Professor",
@@ -60,7 +64,8 @@ const Experience = ({ id, setActiveSection }) => {
         "Conducting research in Medieval Indian History",
         "Publishing academic papers and books",
         "Supervising M.Phil. and Ph.D. students"
-      ]
+      ],
+       logo: puneunilogo
     },
     {
       position: "Lecturer",
@@ -73,7 +78,8 @@ const Experience = ({ id, setActiveSection }) => {
         "Developing course curriculum",
         "Student mentoring and guidance",
         "Research and publication activities"
-      ]
+      ],
+        logo: puneunilogo
     },
     {
       position: "Lecturer",
@@ -86,7 +92,8 @@ const Experience = ({ id, setActiveSection }) => {
         "Teaching undergraduate students",
         "Research initiation",
         "Course development and delivery"
-      ]
+      ],
+        logo: shivajilogo
     }
   ]
 
@@ -147,6 +154,7 @@ const Experience = ({ id, setActiveSection }) => {
 
                     <div className="space-y-2">
                       <h5 className="font-medium text-secondary-800">Key Responsibilities:</h5>
+                      <div className='flex justify-between'>
                       <ul className="space-y-1">
                         {exp.highlights.map((highlight, hIndex) => (
                           <li key={hIndex} className="flex items-start space-x-2">
@@ -155,6 +163,8 @@ const Experience = ({ id, setActiveSection }) => {
                           </li>
                         ))}
                       </ul>
+                      <img src={exp.logo} alt={`${exp.institution} logo`} className="mt-4 hidden md:block h-16 object-contain" />
+                      </div>  
                     </div>
                   </div>
                 </div>

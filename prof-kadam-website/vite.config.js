@@ -6,5 +6,13 @@ export default defineConfig({
   plugins: [react()],
   css: {
     postcss: './postcss.config.js'
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5174',
+        changeOrigin: true
+      }
+    }
   }
 })

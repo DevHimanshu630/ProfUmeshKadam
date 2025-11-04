@@ -32,10 +32,11 @@ const Contact = ({ id, setActiveSection }) => {
     },
     {
       type: "Academic Email",
-      value: "uakadam@jnu.ac.in",
+      value: "uakadam@jnu.ac.in , uakadam@mail.jnu.ac.in",
       icon: "🎓",
       description: "JNU institutional email"
     },
+    
     {
       type: "Mobile",
       value: "(0) 7838489367, (0) 9850169020",

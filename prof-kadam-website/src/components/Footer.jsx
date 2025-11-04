@@ -6,7 +6,7 @@ const Footer = () => {
           {/* Professional Info */}
           <div className="space-y-3 lg:space-y-4">
             <h3 className="text-lg lg:text-xl font-bold text-white">
-              Prof. (Dr.) Umesh Ashok Kadam
+              Prof. Umesh Ashok Kadam , Ph.D
             </h3>
             <p className="text-secondary-300 text-sm lg:text-base">
               Professor of Medieval Indian History<br />
@@ -74,7 +74,8 @@ const Footer = () => {
                   href="mailto:uakadam@jnu.ac.in"
                   className="text-primary-400 hover:text-primary-300 transition-colors duration-200"
                 >
-                  uakadam@jnu.ac.in
+                  uakadam@jnu.ac.in , uakadam@mail.jnu.ac.in
+
                 </a>
               </p>
             </div>
@@ -85,11 +86,11 @@ const Footer = () => {
         <div className="border-t border-secondary-700 mt-6 lg:mt-8 pt-6 lg:pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-secondary-400 text-xs lg:text-sm text-center md:text-left">
-              © 2025 Prof. (Dr.) Umesh Ashok Kadam. All rights reserved.
+              © 2025 Prof. Umesh Ashok Kadam , Ph.D. All rights reserved.
             </p>
             <div className="flex space-x-4 lg:space-x-6">
               <span className="text-secondary-400 text-xs lg:text-sm text-center">
-                Research Focus: Medieval India, Maratha-European Relations
+                Research Focus: Medieval India History and Early Modern History, Maratha-European Relations
               </span>
             </div>
           </div>
