@@ -45,7 +45,7 @@ const links = [
   },
   {
     name: 'LinkedIn',
-    href: 'https://linkedin.com/in/umesh-ashok-kadam',
+    href: 'https://linkedin.com/in/umesh-ashok-kadam-8162a245',
     bg: 'bg-[#0A66C2]',
     svg: (
       <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
