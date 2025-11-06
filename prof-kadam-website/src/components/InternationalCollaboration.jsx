@@ -26,10 +26,10 @@ const editorialBoard = [
 ]
 
 const countriesVisited = [
-  { country: "FRANCE", years: "2004, 2007, 2019" },
-  { country: "UNITED KINGDOM", years: "2004 & 2009" },
-  { country: "AMSTERDAM, NETHERLANDS", years: "2019" },
-  { country: "LISBON, PORTUGAL", years: "2019 & 2024" }
+  { country: "FRANCE", years: "2004, 2007, 2019", flag: "🇫🇷" },
+  { country: "UNITED KINGDOM", years: "2004 & 2009", flag: "🇬🇧" },
+  { country: "AMSTERDAM, NETHERLANDS", years: "2019", flag: "🇳🇱" },
+  { country: "LISBON, PORTUGAL", years: "2019 & 2024", flag: "🇵🇹" }
 ]
 
 const internationalPresentations = [
@@ -192,9 +192,11 @@ const InternationalCollaboration = () => {
                       <h4 className="font-semibold text-primary-700 mb-1 break-words">{member.org}</h4>
                       <p className="text-sm text-secondary-700 break-words">{member.detail}</p>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-3">
                       {member.logos.map((src, i) => (
-                        <img key={i} src={src} alt="membership logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain border border-primary-100 rounded bg-white p-1" />
+                        <div key={i} className="flex items-center justify-center h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-[250px] bg-white border-2 border-primary-200 rounded-lg p-2 shadow-sm">
+                          <img src={src} alt="membership logo" className="w-full h-full object-contain" />
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -239,11 +241,13 @@ const InternationalCollaboration = () => {
                         View Editorial Board
                       </a>
                     </div>
-                    <img
-                      src={item.logo}
-                      alt="editorial board logo"
-                      className="h-10 w-10 sm:h-12 sm:w-12 object-contain border border-primary-100 rounded bg-white p-1 flex-shrink-0"
-                    />
+                    <div className="flex items-center justify-center h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-32 bg-white border-2 border-primary-200 rounded-lg p-2 shadow-sm flex-shrink-0">
+                      <img
+                        src={item.logo}
+                        alt="editorial board logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   </div>
                 ) : (
                   <>
@@ -265,9 +269,12 @@ const InternationalCollaboration = () => {
         <SectionCard title="Countries Visited">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {countriesVisited.map((item, idx) => (
-              <div key={idx} className="p-4 bg-primary-50 rounded-lg border border-primary-100">
-                <h4 className="font-semibold text-primary-700 mb-1">{item.country}</h4>
-                <p className="text-sm text-secondary-700">{item.years}</p>
+              <div key={idx} className="p-4 bg-primary-50 rounded-lg border border-primary-100 flex items-center gap-4">
+                <div className="flex-shrink-0 text-4xl lg:text-5xl">{item.flag}</div>
+                <div className="flex-1 min-w-0">
+                  <h4 className="font-semibold text-primary-700 mb-1">{item.country}</h4>
+                  <p className="text-sm text-secondary-700">{item.years}</p>
+                </div>
               </div>
             ))}
           </div>

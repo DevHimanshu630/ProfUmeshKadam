@@ -116,9 +116,35 @@ const Footer = () => {
               </span>
             </div>
           </div>
-          <div className="mt-4 text-center">
-            <div className="text-secondary-400 text-xs lg:text-sm">
-              Visitor Count: <span className="text-primary-400 font-semibold">{visitorCount !== null ? visitorCount.toLocaleString() : '9999'}</span>
+          {/* Visitor Counter */}
+          <div className="mt-8 lg:mt-10 flex justify-end">
+            <div className="inline-flex flex-col items-end gap-2">
+              <span className="text-primary-400 text-xs font-medium uppercase tracking-wide">Total Visitors</span>
+              <div className="flex items-center gap-1">
+                {visitorCount !== null ? (
+                  visitorCount.toLocaleString().split('').map((digit, index) => (
+                    digit === ',' ? (
+                      <span key={index} className="text-primary-400 text-xl lg:text-2xl font-bold px-1">,</span>
+                    ) : (
+                      <div
+                        key={index}
+                        className="flex items-center justify-center w-8 h-10 lg:w-10 lg:h-12 bg-secondary-800 border-2 border-primary-500/50 rounded text-white text-xl lg:text-2xl font-bold shadow-sm"
+                      >
+                        {digit}
+                      </div>
+                    )
+                  ))
+                ) : (
+                  <div className="flex items-center gap-1">
+                    {[0, 0, 0, 0].map((_, index) => (
+                      <div
+                        key={index}
+                        className="w-8 h-10 lg:w-10 lg:h-12 bg-secondary-700/50 border-2 border-secondary-600 rounded animate-pulse"
+                      ></div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
