@@ -23,6 +23,12 @@ function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [currentPath, setCurrentPath] = useState(window.location.pathname)
 
+  // Increment visitor count on every page load
+  useEffect(() => {
+    fetch('/api/visitor/increment', { method: 'POST' })
+      .catch(err => console.error('Error incrementing visitor count:', err))
+  }, [])
+
   // Lightweight client-side navigation
   const navigate = (path) => {
     if (path === currentPath) return

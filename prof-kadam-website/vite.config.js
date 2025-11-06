@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5174',
+        target: 'https://59s62w99-5174.inc1.devtunnels.ms',
         changeOrigin: true
       }
     }

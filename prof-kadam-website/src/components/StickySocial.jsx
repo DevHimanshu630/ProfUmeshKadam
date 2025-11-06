@@ -13,7 +13,7 @@ const links = [
   },
   {
     name: 'Academia.edu',
-    href: 'https://umeshkadam.academia.edu/',
+    href: 'https://academia.edu/',
     bg: 'bg-[#111827]',
     svg: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" className="w-5 h-5">

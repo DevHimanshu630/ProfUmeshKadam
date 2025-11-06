@@ -5,14 +5,14 @@ const Blog = ({ id = 'blog', navigate }) => {
   const [activeTag, setActiveTag] = useState('All')
 
   const [postsFromApi, setPostsFromApi] = useState([])
-  // useEffect(() => {
-  //   let mounted = true
-  //   fetch('/api/posts')
-  //     .then(r => (r.ok ? r.json() : Promise.reject()))
-  //     .then(data => { if (mounted) setPostsFromApi(Array.isArray(data) ? data : []) })
-  //     .catch(() => { if (mounted) setPostsFromApi([]) })
-  //   return () => { mounted = false }
-  // }, [])
+  useEffect(() => {
+    let mounted = true
+    fetch('/api/posts')
+      .then(r => (r.ok ? r.json() : Promise.reject()))
+      .then(data => { if (mounted) setPostsFromApi(Array.isArray(data) ? data : []) })
+      .catch(() => { if (mounted) setPostsFromApi([]) })
+    return () => { mounted = false }
+  }, [])
 
   const allTags = useMemo(() => {
     const set = new Set()
@@ -33,7 +33,7 @@ const Blog = ({ id = 'blog', navigate }) => {
   const [featured, ...rest] = posts
 
   return (
-    <section id={id} className="py-16 lg:mt-16 sm:py-20 lg:py-24 bg-gray-50 mt-5">
+    <section id={id} className="py-16 lg:mt-24 sm:py-20 lg:py-24 bg-gray-50 mt-3">
       <div className="container-custom px-4 sm:px-6 lg:px-8">
         <div className="mb-10 sm:mb-12">
           <div className="mx-auto max-w-4xl text-center rounded-2xl border border-primary-100 bg-white shadow-md px-6 sm:px-8 py-6 sm:py-8">

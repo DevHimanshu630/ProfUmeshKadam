@@ -1,8 +1,16 @@
 import conferenceImg from '../assets/upcoming_eventPoster/conference.jpeg'
+import logo1 from '../assets/internationalcollaborationImg/logo1.jpeg'
+import logo2 from '../assets/internationalcollaborationImg/logo2.jpeg'
+import isrhLogo from '../assets/internationalcollaborationImg/isrh.jpeg'
+import editorialBoardLogo from '../assets/internationalcollaborationImg/editorialboard.jpeg'
 
 const memberships = [
-  { org: "Member, Association for Spanish and Portuguese Historical Studies", detail: "An affiliated society of American Historical Association, University of Kansas, United States." },
-  { org: "Steering Committee Member, International Society of Regional History (ISRH)", detail: "North West University, Vanderbijlpark, South Africa." }
+  { 
+    org: "Member, Association for Spanish and Portuguese Historical Studies",
+    detail: "An affiliated society of American Historical Association, University of Kansas, United States.",
+    logos: [logo1, logo2]
+  },
+  { org: "Steering Committee Member, International Society of Regional History (ISRH)", detail: "North West University, Vanderbijlpark, South Africa.", logos: [isrhLogo] }
 ]
 
 const awards = [
@@ -14,7 +22,7 @@ const awards = [
 ]
 
 const editorialBoard = [
-  { journal: "Histories of People and Place", publisher: "Taylor & Francis Online, United Kingdom", url: "https://www.tandfonline.com/action/journalInformation?show=editorialBoard&journalCode=yjrl21", role: "Member Editorial Advisory Board", period: "2023 onwards" }
+  { journal: "Histories of People and Place", publisher: "Taylor & Francis Online, United Kingdom", url: "https://www.tandfonline.com/action/journalInformation?show=editorialBoard&journalCode=yjrl21", role: "Member Editorial Advisory Board", period: "2023 onwards", logo: editorialBoardLogo }
 ]
 
 const countriesVisited = [
@@ -109,6 +117,15 @@ const internationalPresentations = [
   }
 ]
 
+const conferenceSessionsChaired = [
+  {
+    event: "ISRH International Society of Regional History (ISRH), III Global Conference 2025 on 'Migration in a World of Regions'",
+    organizer: "International Webinar organized by University of Helsinki Ruralia Institute, Finland",
+    date: "15th to 17th September 2025",
+    role: "Session Chair"
+  }
+]
+
 function SectionCard({ title, children }) {
   return (
     <div className="mb-8">
@@ -169,8 +186,24 @@ const InternationalCollaboration = () => {
           <div className="space-y-4">
             {memberships.map((member, idx) => (
               <div key={idx} className="p-4 bg-primary-50 rounded-lg border border-primary-100">
-                <h4 className="font-semibold text-primary-700 mb-1">{member.org}</h4>
-                <p className="text-sm text-secondary-700">{member.detail}</p>
+                {member.logos ? (
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-primary-700 mb-1 break-words">{member.org}</h4>
+                      <p className="text-sm text-secondary-700 break-words">{member.detail}</p>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      {member.logos.map((src, i) => (
+                        <img key={i} src={src} alt="membership logo" className="h-10 w-10 sm:h-12 sm:w-12 object-contain border border-primary-100 rounded bg-white p-1" />
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <h4 className="font-semibold text-primary-700 mb-1">{member.org}</h4>
+                    <p className="text-sm text-secondary-700">{member.detail}</p>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -194,14 +227,36 @@ const InternationalCollaboration = () => {
           <div className="space-y-4">
             {editorialBoard.map((item, idx) => (
               <div key={idx} className="p-4 bg-primary-50 rounded-lg border border-primary-100">
-                <h4 className="font-semibold text-primary-700 mb-1">{item.journal}</h4>
-                <p className="text-sm text-secondary-700 mb-1">{item.publisher}</p>
-                <p className="text-sm text-secondary-600 mb-2">
-                  <span className="font-medium">{item.role}</span> ({item.period})
-                </p>
-                <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 hover:text-primary-700 underline">
-                  View Editorial Board
-                </a>
+                {item.logo ? (
+                  <div className="flex items-center gap-3">
+                    <div className="flex-1 min-w-0">
+                      <h4 className="font-semibold text-primary-700 mb-1 break-words">{item.journal}</h4>
+                      <p className="text-sm text-secondary-700 mb-1 break-words">{item.publisher}</p>
+                      <p className="text-sm text-secondary-600 mb-2">
+                        <span className="font-medium">{item.role}</span> ({item.period})
+                      </p>
+                      <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 hover:text-primary-700 underline">
+                        View Editorial Board
+                      </a>
+                    </div>
+                    <img
+                      src={item.logo}
+                      alt="editorial board logo"
+                      className="h-10 w-10 sm:h-12 sm:w-12 object-contain border border-primary-100 rounded bg-white p-1 flex-shrink-0"
+                    />
+                  </div>
+                ) : (
+                  <>
+                    <h4 className="font-semibold text-primary-700 mb-1">{item.journal}</h4>
+                    <p className="text-sm text-secondary-700 mb-1">{item.publisher}</p>
+                    <p className="text-sm text-secondary-600 mb-2">
+                      <span className="font-medium">{item.role}</span> ({item.period})
+                    </p>
+                    <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary-600 hover:text-primary-700 underline">
+                      View Editorial Board
+                    </a>
+                  </>
+                )}
               </div>
             ))}
           </div>
@@ -240,6 +295,28 @@ const InternationalCollaboration = () => {
                 )}
                 <p className="text-xs text-secondary-500 mt-2">
                   <span className="font-medium">Date:</span> {presentation.date}
+                </p>
+              </div>
+            ))}
+          </div>
+        </SectionCard>
+
+        <SectionCard title="Conference Session Chaired">
+          <div className="space-y-4">
+            {conferenceSessionsChaired.map((session, idx) => (
+              <div key={idx} className="p-4 bg-primary-50 rounded-lg border border-primary-100">
+                <div className="flex items-start justify-between mb-2">
+                  <h4 className="font-semibold text-primary-700 flex-1">Session Chair</h4>
+                  <span className="text-xs font-medium text-primary-600 bg-primary-100 px-2 py-1 rounded ml-2 whitespace-nowrap">Session Chair</span>
+                </div>
+                <p className="text-sm text-secondary-700 mb-1">
+                  <span className="font-medium">Event:</span> {session.event}
+                </p>
+                <p className="text-sm text-secondary-700 mb-1">
+                  <span className="font-medium">Organizer:</span> {session.organizer}
+                </p>
+                <p className="text-xs text-secondary-500 mt-2">
+                  <span className="font-medium">Date:</span> {session.date}
                 </p>
               </div>
             ))}

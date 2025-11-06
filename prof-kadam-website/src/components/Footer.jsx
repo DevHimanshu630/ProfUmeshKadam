@@ -1,4 +1,25 @@
+import { useEffect, useState } from 'react'
+
 const Footer = () => {
+  const [visitorCount, setVisitorCount] = useState(null)
+
+  useEffect(() => {
+    // Fetch visitor count
+    const fetchVisitorCount = async () => {
+      try {
+        const response = await fetch('/api/visitor')
+        if (response.ok) {
+          const data = await response.json()
+          setVisitorCount(data.count)
+        }
+      } catch (error) {
+        console.error('Error fetching visitor count:', error)
+      }
+    }
+
+    fetchVisitorCount()
+  }, [])
+
   return (
     <footer className="bg-secondary-900 text-white">
       <div className="container-custom py-8 lg:py-12 px-4 sm:px-6 lg:px-8">
@@ -92,6 +113,11 @@ const Footer = () => {
               <span className="text-secondary-400 text-xs lg:text-sm text-center">
                 Research Focus: Medieval India History and Early Modern History, Maratha-European Relations
               </span>
+            </div>
+          </div>
+          <div className="mt-4 text-center">
+            <div className="text-secondary-400 text-xs lg:text-sm">
+              Visitor Count: <span className="text-primary-400 font-semibold">{visitorCount !== null ? visitorCount.toLocaleString() : '9999'}</span>
             </div>
           </div>
         </div>

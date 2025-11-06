@@ -36,7 +36,7 @@ const DATA = [
     },
     {
       sNo: "6",
-      post: "Member, General Body and Governing Council (Name truncated)",
+      post: "Member, General Body and Governing Council",
       organization: "Disciplinary Development Research (CDMR) University, Aug 2022",
       duration: "2022 — 2025",
       experience: "03 years",
@@ -57,7 +57,7 @@ const DATA = [
     },
     {
       sNo: "9",
-      post: "Statutory Position – Dean / Director (sample text)",
+      post: "Statutory Position – Dean / Director",
       organization: "Jawaharlal Nehru University, New Delhi",
       duration: "2017 — 2020",
       experience: "03 years",
@@ -71,7 +71,7 @@ const DATA = [
     },
     {
       sNo: "11",
-      post: "Member, Boards and Committees (multiple entries)",
+      post: "Member, Boards and Committees",
       organization: "National Archives of India; Ministry of Culture; Government of India",
       duration: "2018 — 2023",
       experience: "03 years",

@@ -33,7 +33,7 @@ const About = ({ id, setActiveSection }) => {
           <div className="w-24 h-1 bg-primary-600 mx-auto"></div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="md:grid lg:grid-cols-2 gap-12 items-start">
           {/* Personal Information */}
           <div className="space-y-8">
             <div className="bg-secondary-50 rounded-xl p-8">

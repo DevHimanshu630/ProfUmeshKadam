@@ -74,11 +74,11 @@ const Hero = ({ id, setActiveSection }) => {
         <div className="absolute -bottom-8 left-20 w-72 h-72 bg-secondary-300 rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
-      <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8">
-        <div className="min-h-screen flex items-center lg:pb-18">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      <div className="relative z-10 container-custom px-4 sm:px-6 lg:px-8 pt-8 sm:pt-24 lg:pt-0">
+        <div className="min-h-screen lg:flex lg:items-center lg:pb-18">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start lg:items-center">
             {/* Left Content */}
-            <div className="space-y-6 lg:space-y-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
               {/* Main Heading */}
               <div className="space-y-3 lg:space-y-4">
                 {/* <h1 className="text-3xl lg:text-3xl font-bold text-secondary-900 leading-tight">
@@ -106,10 +106,10 @@ const Hero = ({ id, setActiveSection }) => {
                 </div>
                 <br />
                 <div className="space-y-2">
-                  <h2 className="text-xl lg:text-2xl font-semibold text-primary-600">
+                  <h2 className="text-base sm:text-lg lg:text-2xl font-semibold text-primary-600 leading-tight break-words">
                     Professor of Medieval Indian and Early Modern Indian History, Centre for Historical Studies, Jawaharlal Nehru University, New Delhi
                   </h2>
-                  <p className="text-base lg:text-lg text-secondary-700 font-medium">
+                  <p className="text-sm sm:text-base lg:text-lg text-secondary-700 font-medium break-words">
                     Historian, Author, Editor, Exhibition Curator / Designer & Agriculturalist
                   </p>
                 </div>
@@ -118,24 +118,24 @@ const Hero = ({ id, setActiveSection }) => {
                 
                       
               {/* Research Focus */}
-              <div className="space-y-3 lg:space-y-4">
-                <h3 className="text-lg font-semibold text-secondary-800">Research Focus</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                  <div className="flex items-center space-x-3 p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-secondary-700 text-sm">Medieval India & Maratha-European Relations</span>
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4">
+                <h3 className="text-base sm:text-lg font-semibold text-secondary-800">Research Focus</h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
+                  <div className="flex items-start sm:items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0 mt-1.5 sm:mt-0"></div>
+                    <span className="text-secondary-700 text-xs sm:text-sm break-words">Medieval India & Maratha-European Relations</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-secondary-700 text-sm">Historiography & Bhakti Tradition</span>
+                  <div className="flex items-start sm:items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0 mt-1.5 sm:mt-0"></div>
+                    <span className="text-secondary-700 text-xs sm:text-sm break-words">Historiography & Bhakti Tradition</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-secondary-700 text-sm">Maritime & Heritage Studies</span>
+                  <div className="flex items-start sm:items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0 mt-1.5 sm:mt-0"></div>
+                    <span className="text-secondary-700 text-xs sm:text-sm break-words">Maritime & Heritage Studies</span>
                   </div>
-                  <div className="flex items-center space-x-3 p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
-                    <div className="w-2 h-2 bg-primary-500 rounded-full"></div>
-                    <span className="text-secondary-700 text-sm">26+ Years of Teaching Experience</span>
+                  <div className="flex items-start sm:items-center space-x-2 sm:space-x-3 p-2 sm:p-3 bg-white/80 backdrop-blur-sm rounded-lg shadow-sm border border-primary-200 hover:shadow-md transition-shadow">
+                    <div className="w-2 h-2 bg-primary-500 rounded-full flex-shrink-0 mt-1.5 sm:mt-0"></div>
+                    <span className="text-secondary-700 text-xs sm:text-sm break-words">26+ Years of Teaching Experience</span>
                   </div>
                 </div>
               </div>
@@ -144,16 +144,15 @@ const Hero = ({ id, setActiveSection }) => {
               <div className="flex flex-col sm:flex-row gap-3 lg:gap-4">
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="group relative px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
+                  className="relative px-4 sm:px-6 py-2.5 sm:py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
                 >
-                  <span className="relative z-10">Learn More About Me</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary-600 to-primary-700 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <span className="relative z-20 block">Learn More About Me</span>
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="group px-6 py-3 bg-white/90 backdrop-blur-sm text-secondary-700 font-semibold rounded-xl shadow-lg hover:shadow-xl border-2 border-primary-200 hover:border-primary-300 transform hover:-translate-y-1 transition-all duration-300"
+                  className="relative px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-secondary-800 font-semibold text-sm sm:text-base rounded-xl shadow-lg hover:shadow-xl border-2 border-primary-300 hover:border-primary-400 transform hover:-translate-y-1 transition-all duration-300 w-full sm:w-auto"
                 >
-                  Get In Touch
+                  <span className="relative z-20 block">Get In Touch</span>
                 </button>
               </div>
 
@@ -175,92 +174,92 @@ const Hero = ({ id, setActiveSection }) => {
             </div>
 
             {/* Right Content - Profile Image and Professional Summary */}
-            <div className="space-y-6 lg:space-y-8">
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 w-full">
               {/* Profile Image Carousel */}
               <div className="flex justify-center lg:justify-end">
                 <div className="relative">
-                  <div className="w-48 h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200 relative">
+                  <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden shadow-2xl border-4 border-primary-200 relative bg-primary-100">
                     {images.map((img, idx) => (
                       <img
                         key={idx}
                         src={img}
                         alt={`Prof. (Dr.) Umesh Ashok Kadam - ${idx + 1}`}
                         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-                          idx === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                          idx === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                       />
                     ))}
                   </div>
                   {/* Decorative elements */}
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent-500 rounded-full"></div>
-                  <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-secondary-400 rounded-full"></div>
+                  <div className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 bg-accent-500 rounded-full"></div>
+                  <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-secondary-400 rounded-full"></div>
                 </div>
               </div>
 
               {/* Professional Summary Card */}
-              <div className="relative">
-                <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-4 lg:p-6 border border-primary-200">
-                  <div className="absolute -top-3 -right-3 w-6 h-6 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
-                    <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+              <div className="relative w-full">
+                <div className="bg-white/90 backdrop-blur-sm rounded-2xl shadow-2xl p-4 sm:p-5 lg:p-6 border border-primary-200">
+                  <div className="absolute -top-3 -right-3 w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full flex items-center justify-center">
+                    <svg className="w-3 h-3 sm:w-4 sm:h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
 
-                  <h3 className="text-xl font-bold text-secondary-900 mb-4">Professional Summary</h3>
+                  <h3 className="text-lg sm:text-xl font-bold text-secondary-900 mb-3 sm:mb-4">Professional Summary</h3>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="space-y-3 sm:space-y-4">
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 text-sm">Current Position</h4>
-                        <p className="text-secondary-600 text-sm">Professor, JNU (2013-present)</p>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-secondary-900 text-xs sm:text-sm">Current Position</h4>
+                        <p className="text-secondary-600 text-xs sm:text-sm break-words">Professor, JNU (2013-present)</p>
                       </div>
                     </div>
 
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-accent-600" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 text-sm">Publications</h4>
-                        <p className="text-secondary-600 text-sm">56 Books (48 authored, 8 edited) + 50+ Research Papers</p>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-secondary-900 text-xs sm:text-sm">Publications</h4>
+                        <p className="text-secondary-600 text-xs sm:text-sm break-words">56 Books (48 authored, 8 edited) + 50+ Research Papers</p>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
+                    
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-primary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                         </svg>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 text-sm">Awards</h4>
-                        <p className="text-secondary-600 text-sm">State Best Teacher Award, Charles Wallace Trust Fellow</p>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-secondary-900 text-xs sm:text-sm">Awards</h4>
+                        <p className="text-secondary-600 text-xs sm:text-sm break-words">State Best Teacher Award, Charles Wallace Trust Fellow</p>
                       </div>
                     </div>
-
-                    <div className="flex items-start space-x-3">
-                      <div className="w-10 h-10 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
+                    
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-secondary-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg className="w-4 h-4 sm:w-5 sm:h-5 text-secondary-600" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
                         </svg>
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-secondary-900 text-sm">Languages</h4>
-                        <p className="text-secondary-600 text-sm">Marathi (native), Hindi, English, French (basic)</p>
+                      <div className="flex-1 min-w-0">
+                        <h4 className="font-semibold text-secondary-900 text-xs sm:text-sm">Languages</h4>
+                        <p className="text-secondary-600 text-xs sm:text-sm break-words">Marathi (native), Hindi, English, French (basic)</p>
                       </div>
                     </div>
                   </div>
 
                   {/* Quick Links */}
-                  <div className="mt-6 pt-4 border-t border-primary-200">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mt-4 sm:mt-6 pt-3 sm:pt-4 border-t border-primary-200">
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2">
                       <a href="#publications" className="px-2 py-1 bg-primary-100 text-primary-700 rounded-full text-xs font-medium hover:bg-primary-200 transition-colors">
                         Publications
                       </a>
