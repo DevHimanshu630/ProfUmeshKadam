@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { getApiUrl } from '../config/api'
 
 const BlogPost = ({ slug, navigate }) => {
   const [post, setPost] = useState(null)
@@ -8,7 +9,7 @@ const BlogPost = ({ slug, navigate }) => {
     let mounted = true
     setError('')
     setPost(null)
-    fetch(`/api/posts/${slug}`)
+    fetch(getApiUrl(`api/posts/${slug}`))
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((data) => {
         if (mounted) setPost(data)

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { getApiUrl } from '../config/api'
 
 const Footer = () => {
   const [visitorCount, setVisitorCount] = useState(null)
@@ -7,7 +8,7 @@ const Footer = () => {
     // Fetch visitor count
     const fetchVisitorCount = async () => {
       try {
-        const response = await fetch('/api/visitor')
+        const response = await fetch(getApiUrl('api/visitor'))
         if (response.ok) {
           const data = await response.json()
           setVisitorCount(data.count)

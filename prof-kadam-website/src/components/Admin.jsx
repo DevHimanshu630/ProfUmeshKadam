@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { getApiUrl } from '../config/api'
 
 const Admin = () => {
   const [title, setTitle] = useState('')
@@ -30,7 +31,7 @@ const Admin = () => {
     }
     
     try {
-      const res = await fetch('/api/posts', {
+      const res = await fetch(getApiUrl('api/posts'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

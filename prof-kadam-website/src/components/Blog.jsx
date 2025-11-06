@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { getApiUrl } from '../config/api'
 
 const Blog = ({ id = 'blog', navigate }) => {
   const [query, setQuery] = useState('')
@@ -7,7 +8,7 @@ const Blog = ({ id = 'blog', navigate }) => {
   const [postsFromApi, setPostsFromApi] = useState([])
   useEffect(() => {
     let mounted = true
-    fetch('/api/posts')
+    fetch(getApiUrl('api/posts'))
       .then(r => (r.ok ? r.json() : Promise.reject()))
       .then(data => { if (mounted) setPostsFromApi(Array.isArray(data) ? data : []) })
       .catch(() => { if (mounted) setPostsFromApi([]) })

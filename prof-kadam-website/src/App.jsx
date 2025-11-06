@@ -18,6 +18,7 @@ import StickySocial from './components/StickySocial'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import { getApiUrl } from './config/api'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
@@ -25,7 +26,7 @@ function App() {
 
   // Increment visitor count on every page load
   useEffect(() => {
-    fetch('/api/visitor/increment', { method: 'POST' })
+    fetch(getApiUrl('api/visitor/increment'), { method: 'POST' })
       .catch(err => console.error('Error incrementing visitor count:', err))
   }, [])
 
