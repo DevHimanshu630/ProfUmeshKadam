@@ -10,7 +10,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://59s62w99-5174.inc1.devtunnels.ms',
+        target: 'https://umeshkadambackend-production.up.railway.app',
         changeOrigin: true
       }
     }
