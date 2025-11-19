@@ -1,6 +1,10 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import humanExcellenceGoldenAward from '../assets/Awards/HumanExcellenceGoldenAward-2025.jpeg'
+import excellenceHistoricalResearchAward from '../assets/Awards/Human ExcellenceHistoricalReaserch2025.jpeg'
+import excellenceHistoricalResearchAwardPart2 from '../assets/Awards/Human ExcellenceHistoricalReaserch2025Part2.jpeg'
 
 const Awards = ({ id, setActiveSection }) => {
+  const [selectedImage, setSelectedImage] = useState(null)
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -23,6 +27,22 @@ const Awards = ({ id, setActiveSection }) => {
     }
   }, [id, setActiveSection])
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && selectedImage) {
+        setSelectedImage(null)
+      }
+    }
+    if (selectedImage) {
+      document.addEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'hidden'
+    }
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = 'unset'
+    }
+  }, [selectedImage])
+
   const awardsData = [
     {
       title: "State Level Best Teacher Award",
@@ -44,6 +64,24 @@ const Awards = ({ id, setActiveSection }) => {
       organization: "Shivaji University",
       description: "Awarded for Ph.D. thesis 'French Maratha Relations (1668–1818)'",
       icon: "🔬"
+    },
+    {
+      title: "Human Excellence Golden Award-2025",
+      year: "2025",
+      organization: "The American University USA (AUGP-USA)",
+      description:
+        "Awarded the 'Human Excellence Golden Award-2025' conferred by The American University USA, AUGP-USA on the recommendation of its World Governing Council of Governors and Senate Members of AUGP-USA in 120 countries on 10 November 2025 at the India International Centre, New Delhi.",
+      icon: "🌟",
+      image: humanExcellenceGoldenAward
+    },
+    {
+      title: "Excellence in Historical Research – 2025",
+      year: "2025",
+      organization: "The American University USA (AUGP-USA)",
+      description:
+        "Awarded the 'Excellence in Historical Research – 2025' conferred by The American University USA, AUGP-USA on the recommendation of its World Governing Council of Governors and Senate Members of AUGP-USA in 120 countries on 10 November 2025 at the India International Centre, New Delhi.",
+      icon: "🎖️",
+      images: [excellenceHistoricalResearchAward, excellenceHistoricalResearchAwardPart2]
     }
   ]
 
@@ -132,6 +170,32 @@ const Awards = ({ id, setActiveSection }) => {
             <div className="grid lg:grid-cols-3 gap-8">
               {awardsData.map((award, index) => (
                 <div key={index} className="bg-secondary-50 rounded-xl p-6 shadow-sm border border-secondary-200">
+                  {award.images ? (
+                    <div className="mb-4 grid gap-4">
+                      {award.images.map((src, imgIdx) => (
+                        <img
+                          key={`${award.title}-image-${imgIdx}`}
+                          src={src}
+                          alt={`${award.title} certificate ${imgIdx + 1}`}
+                          loading="lazy"
+                          className="w-full h-48 object-cover rounded-lg border border-secondary-200 shadow-sm cursor-pointer"
+                          onClick={() => setSelectedImage(src)}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    award.image && (
+                      <div className="mb-4">
+                        <img
+                          src={award.image}
+                          alt={award.title}
+                          loading="lazy"
+                          className="w-full h-48 object-cover rounded-lg border border-secondary-200 shadow-sm cursor-pointer"
+                          onClick={() => setSelectedImage(award.image)}
+                        />
+                      </div>
+                    )
+                  )}
                   <div className="text-center mb-4">
                     <div className="text-4xl mb-3">{award.icon}</div>
                     <h4 className="text-lg font-bold text-secondary-900 mb-2">
@@ -328,7 +392,7 @@ const Awards = ({ id, setActiveSection }) => {
           {/* Statistics */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-secondary-200">
-              <div className="text-3xl font-bold text-primary-600 mb-2">3</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">5</div>
               <div className="text-secondary-700 font-medium">Major Awards</div>
             </div>
             <div className="bg-white rounded-xl p-6 text-center shadow-sm border border-secondary-200">
@@ -346,6 +410,28 @@ const Awards = ({ id, setActiveSection }) => {
           </div>
         </div>
       </div>
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 text-white hover:text-primary-300 transition-colors z-10 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70"
+            aria-label="Close"
+          >
+            <svg className="w-6 h-6 sm:w-8 sm:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+          <div
+            className="relative max-w-5xl max-h-[90vh] w-full h-full flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img src={selectedImage} alt="Full size award certificate" className="max-w-full max-h-full object-contain rounded-lg shadow-2xl" />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
