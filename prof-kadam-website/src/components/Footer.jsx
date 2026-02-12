@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { getApiUrl } from '../config/api'
 
 const Footer = () => {
-  const [visitorCount, setVisitorCount] = useState('702')
+  const [visitorCount, setVisitorCount] = useState('736')
 
   useEffect(() => {
     // Fetch visitor count
