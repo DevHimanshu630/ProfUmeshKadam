@@ -29,7 +29,8 @@ const countriesVisited = [
   { country: "FRANCE", years: "2004, 2007, 2019", flag: "🇫🇷" },
   { country: "UNITED KINGDOM", years: "2004 & 2009", flag: "🇬🇧" },
   { country: "AMSTERDAM, NETHERLANDS", years: "2019", flag: "🇳🇱" },
-  { country: "LISBON, PORTUGAL", years: "2019 & 2024", flag: "🇵🇹" }
+  { country: "LISBON, PORTUGAL", years: "2019 & 2024", flag: "🇵🇹" },
+   { country: "USA", years: "2019", flag: "🇺🇸" }
 ]
 
 const internationalPresentations = [

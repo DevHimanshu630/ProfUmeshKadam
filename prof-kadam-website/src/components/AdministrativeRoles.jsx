@@ -16,7 +16,7 @@ const DATA = [
     {
       sNo: "3",
       post: "Nominated as Governor Nominee/Representative on the Research Council",
-      organization: "Nominee/representative on the Research Council of Mahatma Gandhi University (Madhya Pradesh) 2022-2027",
+      organization: "Nominee/representative on the Research Council of Mumbai University, Maharashtra State",
       duration: "2022 — 2027",
       experience: "05 years",
     },
@@ -64,8 +64,8 @@ const DATA = [
     },
     {
       sNo: "10",
-      post: "Statutory Position (sample)",
-      organization: "Jawaharlal Nehru University, New Delhi",
+      post: "Statutory Position",
+      organization: "Chairperson, Centre for Historical Studies, School of Social Sciences, Jawaharlal Nehru University, New Delhi",
       duration: "2016 — 2018",
       experience: "02 years",
     },

@@ -64,13 +64,15 @@ const phdStudents = [
   { sr: 34, name: 'Miss Smile Arora', registeredFor: 'Ph.D.', dateOfRegistration: 'January 2023', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' },
   { sr: 35, name: 'Miss Ananya Jeff', registeredFor: 'Ph.D.', dateOfRegistration: 'July 2024', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' },
   { sr: 36, name: 'Suryaprakash', registeredFor: 'Ph.D.', dateOfRegistration: 'August 2025', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' },
-  { sr: 37, name: 'Arpita Tarafdar', registeredFor: 'Ph.D.', dateOfRegistration: 'August 2025', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' }
+  { sr: 37, name: 'Arpita Tarafdar', registeredFor: 'Ph.D.', dateOfRegistration: 'August 2025', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' },
+  { sr: 38, name: 'Manish Kumar Arya', registeredFor: 'Ph.D.', dateOfRegistration: 'January 2026', yearOfAward: 'Work in Progress', university: 'J.N.U., New Delhi' }
 ]
 
 const pdfStudents = [
   { sr: 1, name: 'Dr. Ragini Kapoor', registeredFor: 'PDF-ICHR', dateOfRegistration: '2023', yearOfAward: '', institution: 'ICHR' },
   { sr: 2, name: 'Dr. Dolly Purohit', registeredFor: 'PDF-ICSSR', dateOfRegistration: '2023', yearOfAward: '', institution: 'ICSSR' },
-  { sr: 3, name: 'Dr. Anusha Shakya', registeredFor: 'PDF-ICSSR', dateOfRegistration: '2023', yearOfAward: '', institution: 'ICSSR' }
+  { sr: 3, name: 'Dr. Anusha Shakya', registeredFor: 'PDF-ICSSR', dateOfRegistration: '2023', yearOfAward: '', institution: 'ICSSR' },
+  { sr: 4, name: 'Dr. Anwit Shahi', registeredFor: 'PDF-ICSSR', dateOfRegistration: '2026', yearOfAward: '', institution: 'ICSSR' }
 ]
 
 const mbaStudents = [

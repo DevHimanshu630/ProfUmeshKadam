@@ -37,12 +37,12 @@ const Contact = ({ id, setActiveSection }) => {
       description: "JNU institutional email"
     },
     
-    {
-      type: "Mobile",
-      value: "(0) 7838489367, (0) 9850169020",
-      icon: "📱",
-      description: "Contact numbers"
-    }
+    // {
+    //   type: "Mobile",
+    //   value: "(0) 7838489367, (0) 9850169020",
+    //   icon: "📱",
+    //   description: "Contact numbers"
+    // }
   ]
 
   const professionalRoles = [
